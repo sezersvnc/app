@@ -104,7 +104,7 @@ class WeatherApp(QWidget):
             response = requests.get(url)
             response.raise_for_status()
             data= response.json()
-            #print(data)
+            #print(data) use this comment to check the status of the data only
             if data["cod"]==200:
              self.display_weather(data)
         except requests.exceptions.HTTPError as http_error:
