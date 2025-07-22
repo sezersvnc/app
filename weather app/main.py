@@ -21,7 +21,7 @@ class WeatherApp(QWidget):
     def initUI(self):
         self.setWindowTitle("Weather App")
         self.setGeometry(600,300,500,600)
-        #________________palette kismiyla yazildi____________
+        #________________the line of codes is writen by palette ____________
         image = QImage("background.jpg")
 
         if image.isNull():
@@ -102,7 +102,7 @@ class WeatherApp(QWidget):
         url=f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}"
         try:
             response = requests.get(url)
-            response.raise_for_status()# bu kutuphane kodu bize 404 gibi hatalari direkt firlatmamizi sagliyor bu sayede compiler hatayi anliyabiliyor
+            response.raise_for_status()
             data= response.json()
             #print(data)
             if data["cod"]==200:
